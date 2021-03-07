@@ -1,0 +1,17 @@
+{
+  "name": "student-managament-system",
+  "version": "1.0.0",
+  "description": "CRUD app using MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server.js"
+  },
+  "author": "Rasuljon Kurbanov",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.19"
+  }
+}
