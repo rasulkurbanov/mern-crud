@@ -31,6 +31,18 @@ router.route('/')
     }
   })
 
+//Get single student
+router.route('/edit-student/:id')
+      .get( async (req, res) => {
+        try {
+          const data = await StudentModel.findById(req.params.id)
+          res.json(data)
+        }
+        catch(err) {
+          console.log(err)
+        }
+      })
+
 
 //Update Student
 router.route('/update-student/:id')

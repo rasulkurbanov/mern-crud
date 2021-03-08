@@ -21,14 +21,14 @@ connectDB = async () => {
 }
 connectDB()
 
-
-app.use(cors())
+app.use(express.json())
+app.use(cors({origin: true, credentials: true}))
 app.use('/students', StudentRoute)
 
-//404 Error
-// app.use((req, res, next) => {
-//   next(createError(404))
-// })
+// 404Error 
+app.use((req, res, next) => {
+  next(createError(404))
+})
 
 app.use(function(err, req, res, next) {
   console.error(err.message)

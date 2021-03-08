@@ -10,8 +10,6 @@ import StudentList from "./components/StudentList";
 function App() {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
           <Navbar bg="dark" variant="dark">
             <Container>
               <Navbar.Brand>
@@ -28,7 +26,7 @@ function App() {
                 </Nav>
 
                 {/* <Nav>
-                <Link to={"/edit-student/:id"} className="nav-link">
+                <Link to={"/edit-student/"} className="nav-link">
                   Edit Student
                 </Link>
               </Nav> */}
@@ -41,7 +39,6 @@ function App() {
               </Nav>
             </Container>
           </Navbar>
-        </header>
 
         <Container>
           <Row>
@@ -61,6 +58,11 @@ function App() {
                   ></Route>
                   <Route
                     exact
+                    path="/edit-student/:id"
+                    component={EditStudent}
+                  ></Route>
+                  <Route
+                    exact
                     path="/student-list"
                     component={StudentList}
                   ></Route>
@@ -69,7 +71,6 @@ function App() {
             </Col>
           </Row>
         </Container>
-      </div>
     </Router>
   );
 }
